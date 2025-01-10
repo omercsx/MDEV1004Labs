@@ -5,6 +5,7 @@ const searchButton = document.getElementById("searchButton");
 const searchInput = document.getElementById("searchInput");
 const limitInput = document.getElementById("limit");
 const gifContainer = document.getElementById("gifContainer");
+const clearButton = document.getElementById("clearButton");
 
 searchButton.addEventListener("click", () => {
   const searchTerm = searchInput.value;
@@ -24,4 +25,13 @@ searchButton.addEventListener("click", () => {
     .catch(error => {
       console.error("Error fetching GIFs:", error);
     });
+});
+
+clearButton.addEventListener("click", () => {
+  // Clear the input fields
+  searchInput.value = "";
+  limitInput.value = "";
+
+  // Clear the GIF container
+  gifContainer.innerHTML = "";
 });
